@@ -1,0 +1,50 @@
+---
+title: "Movie Reviews"
+author: "Ariane Soldevilla"
+date: "2024-02-06"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(rvest)
+library(dplyr)
+library(purrr)
+library(stringr)
+
+```
+
+```{r}
+
+url <- "https://www.imdb.com/title/tt12801262/reviews/?ref_=tt_ov_rt"
+
+webpage <- read_html(url)
+
+extract_review_info <- function(review_node) {
+  user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
+  rev_date <- review_node %>% html_node(".review-date") %>% html_text()
+  stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  rev_content <- review_node %>% html_node(".text") %>% html_text()
+ 
+  return(data.frame(
+    title = c("Luca"),
+    username = user_name,
+    date = rev_date,
+    stars = as.numeric(stars),
+    content = rev_content
+  ))
+}
+
+reviews <- webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info)
+
+for (page_num in 2:9) {
+  url <- paste0("https://www.imdb.com/title/tt12801262/reviews/?ref_=tt_ov_rt", page_num)
+  webpage <- read_html(url)
+  reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
+}
+
+View(head(reviews, 300))
+```
