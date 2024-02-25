@@ -78,7 +78,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "poor_things.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov3}
@@ -109,7 +111,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "x.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov4}
@@ -140,7 +144,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "Marvels.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov5}
@@ -171,7 +177,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "Past_Lives.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov6}
@@ -202,7 +210,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "Barbie.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov7}
@@ -233,7 +243,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "The_Creator.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov8}
@@ -264,7 +276,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "Napoleon.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov9}
@@ -295,7 +309,9 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "Fury.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov10}
@@ -326,5 +342,7 @@ for (page_num in 2:15) {
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "Midsommar.csv", row.names = FALSE)
+
+print(data.frame)
 ```
