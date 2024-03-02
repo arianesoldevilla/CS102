@@ -40,13 +40,15 @@ extract_review_info <- function(review_node) {
 
 reviews <- webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info)
 
-for (page_num in 2:9) {
+for (page_num in 2:15) {
   url <- paste0("https://www.imdb.com/title/tt12801262/reviews/?ref_=tt_ov_rt", page_num)
   webpage <- read_html(url)
   reviews <- bind_rows(reviews, webpage %>% html_nodes(".review-container") %>% map_df(extract_review_info))
 }
 
-View(head(reviews, 300))
+write.csv(reviews, file = "Luca.csv", row.names = FALSE)
+
+print(data.frame)
 ```
 
 ```{r mov2}
