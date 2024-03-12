@@ -1,7 +1,7 @@
 library(polite)
 library(dplyr)
 library(rvest)
-library(httr)
+library(stringr)
 
 polite::use_manners(save_as = 'polite_scrape.R')
 
@@ -34,11 +34,11 @@ rev_stars <- scraped_page %>%
 
 min_length <- min(length(brand_description), length(price), length(num_of_reviews), length(rev_stars))
 
-laptop_data <- data.frame(
+arts_and_crafts <- data.frame(
   Brand_Description = brand_description[1:min_length],
   Price = price[1:min_length],
   Number_of_Reviews = num_of_reviews[1:min_length],
   Review_Stars = rev_stars[1:min_length]
 )
 
-print(laptop_data)
+arts_and_crafts
