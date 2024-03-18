@@ -27,13 +27,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars)
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Luca"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -49,6 +50,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "Luca.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov2}
@@ -61,13 +64,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Poor Things"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -83,6 +87,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "poor_things.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov3}
@@ -94,13 +100,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("X"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -116,6 +123,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "x.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov4}
@@ -127,13 +136,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Marvels"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -149,6 +159,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "Marvels.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov5}
@@ -160,13 +172,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Past Lives"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -182,6 +195,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "Past_Lives.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov6}
@@ -193,13 +208,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Barbie"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -215,6 +231,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "Barbie.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov7}
@@ -226,13 +244,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("The Creator"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -248,6 +267,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "The_Creator.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov8}
@@ -259,13 +280,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Napoleon"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -281,6 +303,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "Napoleon.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov9}
@@ -292,13 +316,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Fury"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -314,6 +339,8 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "Fury.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```
 
 ```{r mov10}
@@ -325,13 +352,14 @@ extract_review_info <- function(review_node) {
   user_name <- review_node %>% html_node(".display-name-link") %>% html_text()
   rev_date <- review_node %>% html_node(".review-date") %>% html_text()
   stars <- review_node %>% html_node(".rating-other-user-rating") %>% html_text()
+  stars_new <- gsub("[^0-9]", "", stars) 
   rev_content <- review_node %>% html_node(".text") %>% html_text()
  
   return(data.frame(
     title = c("Midsommar"),
     username = user_name,
     date = rev_date,
-    stars = as.numeric(stars),
+    stars = as.numeric(stars_new),
     content = rev_content
   ))
 }
@@ -347,4 +375,6 @@ for (page_num in 2:15) {
 write.csv(reviews, file = "Midsommar.csv", row.names = FALSE)
 
 print(data.frame)
+
+View(head(reviews, 300))
 ```

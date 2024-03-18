@@ -1,3 +1,5 @@
+library(readr)
+
 Mov1 <- read_csv("moviereviews/Luca.csv")
 Mov2 <- read_csv("moviereviews/poor_things.csv")
 Mov3 <- read_csv("moviereviews/x.csv")
